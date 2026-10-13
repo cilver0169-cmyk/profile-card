@@ -1,0 +1,318 @@
+:root {
+    --text: hsl(0, 0%, 20%);
+    --text-light: #858383;
+
+    --primary-pink: #fc7496;
+    --primary-dark: #0a0a0a;
+    --bg-pink: #FFB3C6;
+
+    --blue-bg: #50a1e2;
+    --blue-primary: #2a76b8;
+
+    --green-bg: #81C784;
+    --green-primary: rgb(6, 117, 117);
+}
+
+/* 기본 세팅 */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 페이지 전체 */
+body {
+    font-family: "Noto Sans", sans-serif;
+    background-color: #fafbfb;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 프로필 카드 */
+.profile-card-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 34px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 370px;
+    width: 100%;
+    background: #fff;
+    border-radius: 24px;
+    padding: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all ease 0.4s;
+}
+
+.profile-card::before {
+    content: '';
+    top: 0;
+    left: 0;
+    height: 28%;
+    width: 100%;
+    position: absolute;
+    border-radius: 24px 24px 0 0;
+}
+
+#profile-card-01::before {
+    background-color: var(--bg-pink);
+}
+
+#profile-card-02::before {
+    background-color: var(--blue-bg);
+}
+
+#profile-card-03::before {
+    background-color: var(--green-bg);
+}
+
+.profile-card:hover {
+    box-shadow: 2px 7px 15px rgba(0, 0, 0, 0.22);
+}
+
+.profile-img-wrapper {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+#profile-card-01 .profile-img-wrapper {
+    background-color: var(--primary-pink);
+}
+
+#profile-card-02 .profile-img-wrapper {
+    background-color: var(--blue-primary);
+}
+
+#profile-card-03 .profile-img-wrapper {
+    background-color: var(--green-primary);
+}
+
+.profile-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+
+.profile-card,
+.profile-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 이름, 직업, 정보 */
+.name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 8px 0 4px;
+}
+
+.job-title {
+
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+#profile-card-01 .job-title {
+    color: var(--primary-pink);
+}
+
+#profile-card-02 .job-title {
+    color: var(--blue-primary);
+}
+
+#profile-card-03 .job-title {
+    color: var(--green-primary);
+}
+
+.company {
+    font-size: 0.85rem;
+    color: #a09f9f;
+    margin-bottom: 20px;
+}
+
+.company i {
+    margin-right: 4px;
+}
+
+.info-list {
+    width: 280px;
+    background: #f0f4f8;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.info-list li {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    padding: 6px 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list i {
+    width: 18px;
+    color: var(--text);
+    margin-right: 8px;
+}
+
+/* 쇼셜 미디어 */
+.social-link {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.social-link a i {
+    width: 33px;
+    height: 33px;
+    margin-top: 4px;
+    margin-right: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #e9e9e9;
+    font-size: 1.2rem;
+    transition: all ease 0.3s;
+    color: white;
+}
+
+.social-link a:hover i {
+    transform: translateY(-2px);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-contact {
+    border: none;
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    letter-spacing: 0.03em;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 10px;
+    padding: 9px 24px;
+    color: white;
+    transition: 0.5s ease;
+}
+
+#profile-card-01 .btn-contact {
+    background: var(--primary-pink);
+}
+
+#profile-card-02 .btn-contact {
+    background: var(--blue-primary);
+}
+
+#profile-card-03 .btn-contact {
+    background: var(--green-primary);
+}
+
+
+.btn-contact:hover {
+    opacity: 0.9;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-contact i {
+    margin-right: 8px;
+}
+
+
+.fa-instagram {
+    background: linear-gradient(45deg, #FA7E1E 0%, #D62976 40%, #962FBF 70%, #4F5BD5 100%)
+}
+
+.fa-github {
+    background-color: black;
+}
+
+
+.fa-kakao-talk {
+    background-color: rgb(255, 208, 0);
+    color: black !important;
+}
+
+.fa-facebook-f {
+    background-color: #0168c2;
+}
+
+
+@media (max-width: 960px) {
+    .profile-card-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        column-gap: 50px;
+        row-gap: 70px;
+    }
+}
+
+@media (max-width: 780px) {
+    .profile-card-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        row-gap: 50px;
+    }
+
+    body {
+        padding: 20px 15px;
+    }
+}
